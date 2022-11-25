@@ -1,0 +1,258 @@
+/* ------reset to default -------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+/* ------page variables -------*/
+
+:root{
+    --white: #fff;
+    --black: #000;
+    --color-dark : #5C5C5C;
+    --sidebar-width: 150px;
+}
+
+/* ------side bar -------*/
+
+.sidebar-wrapper {
+    margin: 0;
+    padding: 0;
+    width: var(--sidebar-width);
+    background-color: #191718;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar-wrapper a {
+    display: block;
+    color: #AAAAAA;
+    font-weight: 700;
+    padding: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.sidebar-wrapper a.active {
+    color: var(--white);
+}
+
+.sidebar-wrapper a:hover:not(.active) {
+    color: var(--white);
+    background-color: var(--color-dark);
+}
+
+.sidebar-wrapper .icon {
+    display: none;
+    background-color: transparent !important;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--white);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* ------ end side bar -------*/
+
+/* ------ content -------*/
+.content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+
+/* ------  main content -------*/
+
+.content {
+    flex: 1;
+    padding: 20px 129px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .ncc-logo-image {
+    width: 310px;
+}
+
+.content .title-wrapper {
+    margin-top: 30px;
+    padding: 38px;
+    background-color: #EFEFEF;
+    width: 100%;
+}
+
+.title-wrapper .title {
+    font-size: 18px;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.title-wrapper .subtitle {
+    margin-top: 18px;
+    max-width: 972px;
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-row {
+    margin-top: 40px;
+}
+
+.card {
+    max-width: 470px;
+}
+
+.card:not(:last-child) {
+    margin-right: 50px;
+}
+
+.card .card-title {
+    font-size: 24px;
+    color: var(--black);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.card .card-image {
+    width: 128px;
+    width: 128px;
+    float: left;
+}
+
+.card .card-description{
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+/* ------ end main content -------*/
+
+/* ------ footer -------*/
+
+.footer-wrapper {
+    width: 100%;
+    border-top: 1px solid #DEDEDE;
+    padding: 30px 129px;
+}
+
+.footer-wrapper .footer-copyright {
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    color: #3e3e3e;
+}
+
+/* ------ end footer -------*/
+
+/* ------ end content -------*/
+
+@media screen and (max-width: 1023px) {
+    .sidebar-wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar-wrapper a {
+        float: left;
+        border-bottom: none;
+    }
+
+    div.content-wrapper {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sidebar-wrapper a {
+        display: none;
+        text-align: center;
+        float: none;
+    }
+
+    .sidebar-wrapper a.icon {
+        float: right;
+        display: block;
+    }
+
+    .sidebar-wrapper.responsive {
+        position: relative;
+    }
+
+    .sidebar-wrapper.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .sidebar-wrapper.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .content-wrapper .content {
+        padding: 20px 20px;
+    }
+
+    .card-row {
+        flex-direction: column;
+    }
+
+    .card:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        max-width: 100%;
+        margin-right: 0px !important;
+    }
+
+    .footer-wrapper {
+        padding: 30px 20px;
+    }
+
+}
